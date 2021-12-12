@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
-    a, p, h1, h2, h3, div {
+    a, p, h1, h2, h3, h5, div {
       font-family: 'Gowun Dodum', sans-serif;;
     }
   </style>
@@ -61,7 +61,7 @@
             <label><b>Id</b></label>
               <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Id" name="usrname" required>
               <label><b>Password</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+              <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
               <button class="w3-button w3-block w3-blue w3-login w3-section w3-padding" type="submit">Login</button>
               <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
             </div>
@@ -111,7 +111,81 @@
           <p>원하는 스터디를 찾아보세요!</p>
         <!-- </div> -->
       </div>
-      <button class="w3-button w3-large w3-blue w3-display-bottomright">글쓰기 <i class="fa fa-plus"></i></button>
+      <a href="#" onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-large w3-blue w3-display-bottomright">글쓰기 <i class="fa fa-plus"></i></a>
+      <!-- log in clicked -->
+      <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:80py">
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+          </div>
+          <!-- TODO: action page -->
+          <form class="w3-container w3-padding" action="/action_page.php">
+            <div class="w3-section w3-padding">
+              <h5 class="w3-text-black w3-center w3-padding">게시글 작성</h5><br>
+              <label class="w3-left w3-margin-left"><b>제목</b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="형식 : 제목 #관련과목 #스터디형식 ..." name="title" required>
+            </div>
+            <div class="w3-section w3-padding">
+              <label class="w3-left w3-margin-left"><b>작성자 이름</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="ex) 이달팽" name="name" required><br>
+              <label class="w3-left w3-margin-left"><b>작성자 학번</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="ex) 220XXXXX" name="psw" required>
+            </div>
+            <div class="w3-section w3-padding">
+              <label class="w3-left w3-margin-left"><b>학부</b></label>
+              <select class="w3-input w3-border" name="school" required>
+                <option>글로벌리더십학부
+                <option>국제어문학부
+                <option>경영경제학부
+                <option>법학부
+                <option>커뮤니케이션학부
+                <option>공간환경시스템공학부
+                <option>기계제어공학부
+                <option>콘텐츠융합디자인학부
+                <option>생명과학부
+                <option>전산전자공학부
+                <option>상담심리사회복지학부
+                <option>ICT창업학부
+                <option>창의융합교육원
+                <option>AI융합교육원
+              </select><br>
+              <label class="w3-left w3-margin-left"><b>스터디 이름</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="ex) 민달팽이" name="psw" required>
+            </div>
+            <div class="w3-section w3-padding">
+              <label class="w3-left w3-margin-left"><b>오픈챗 링크 </b><a href="https://fervors.tistory.com/185" target="_blank"> 생성방법 보러 가기</a></label>
+              <input class="w3-input w3-border" type="text" placeholder="ex) https://open.kakao.com/a/bcdeF" name="name" required><br>
+              <label class="w3-left w3-margin-left"><b>작성자 학번</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="ex) 220XXXXX" name="psw" required>
+            </div>
+            <div class="w3-section w3-padding">
+              <label class="w3-left w3-margin-left"><b>현 인원수 (본인 포함)</b></label>
+              <input class="w3-input w3-border" type="number" min="1" placeholder="ex) 1" name="nowPerson" required><br>
+              <label class="w3-left w3-margin-left"><b>총 인원수</b></label>
+              <input class="w3-input w3-border" type="number" min="2" placeholder="ex) 4" name="maxPerson" required><br>
+              <label class="w3-left w3-margin-left"><b>모집 마감일</b></label>
+              <input class="w3-input w3-border" type="date" name="dueDate" required><br>
+            </div>
+            <div class="w3-section w3-padding">
+              <label class="w3-left w3-margin-left"><b>스터디 타입 선택</b></label><br>
+              <input class="w3-input w3-border" type="radio" name="study" required>
+              <label class="w3-left w3-margin-left">시간 정하고 모여서 공부</label><br>
+              <input class="w3-input w3-border" type="radio" name="explanation" required>
+              <label class="w3-left w3-margin-left">한 사람씩 돌아가면서 내용 설명</label><br>
+              <input class="w3-input w3-border" type="radio" id="javascript" name="atAll">
+              <label class="w3-left w3-margin-left">기타 (아래 스터디 설명 란에서 설명해주세요!)</label><br><br>
+            </div>
+            <div class="w3-section w3-padding">
+              <label class="w3-left w3-margin-left"><b>스터디 설명</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="어필도 좋습니다!" name="content" required>
+            </div>
+            </div>
+            <div class="w3-section w3-padding">
+              <button class="w3-button w3-block w3-blue w3-login w3-section w3-padding" type="submit">Create Post</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
     <div class="table-responsive w3-padding-32">
