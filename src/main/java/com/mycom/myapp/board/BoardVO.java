@@ -1,7 +1,5 @@
 package com.mycom.myapp.board;
 
-import java.util.Date;
-
 public class BoardVO {
 	private int seq;
 	private int studentNum;

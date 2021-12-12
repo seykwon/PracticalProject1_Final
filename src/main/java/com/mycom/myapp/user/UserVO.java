@@ -1,7 +1,5 @@
 package com.mycom.myapp.user;
 
-import java.util.Date;
-
 public class UserVO {
 	private int seq;
 	private String id;
